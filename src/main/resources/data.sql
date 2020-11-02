@@ -1,0 +1,1 @@
+INSERT INTO dog (name, description) VALUES ('August', 'A cutie pie doggo');
