@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/dogs")
+@RequestMapping("/api/v1/dogs")
 public class DogController {
 
     @Autowired
