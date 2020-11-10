@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -27,11 +28,19 @@ public class DogControllerTest {
     private DogRepository dogRepository;
 
     @Test
-    @DisplayName("Test for get all")
-    public void itShouldGetAllDogs() throws Exception {
-
+    @DisplayName("Test for get all API")
+    public void itShouldGetAllDogsAPI() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .get("/api/v1/dogs")
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    @DisplayName("Test for get one API")
+    public void itShouldGetDogByIdAPI() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                .get("/api/v1/dogs/{id}", 1)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
