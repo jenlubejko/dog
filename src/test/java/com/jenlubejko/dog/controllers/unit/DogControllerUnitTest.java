@@ -1,5 +1,6 @@
-package com.jenlubejko.dog.controllers;
+package com.jenlubejko.dog.controllers.unit;
 
+import com.jenlubejko.dog.controllers.DogController;
 import com.jenlubejko.dog.repositories.DogRepository;
 
 import org.junit.jupiter.api.DisplayName;
@@ -18,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(value = DogController.class)
-public class DogControllerTest {
+public class DogControllerUnitTest {
 
     @Autowired
     private MockMvc mockMvc;
